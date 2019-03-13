@@ -1,3 +1,11 @@
+const Discord = require('discord.js');
+const client = new Discord.Client();
+ 
+client.on('ready', () => {
+  console.log(`Logged in as ${client.user.tag}!`);
+});
+
+
 client.on("message", (message) => {
  
    if (message.content.startsWith("!new")) {  
@@ -53,4 +61,5 @@ client.on("message", (message) => {
    }
  
 });
+
 client.login("NTU1MzQ4NjU1NjMzMDcyMTM5.D2p5zg.YOS1eB5GforlOUAHjdUeibIZ2k8");
