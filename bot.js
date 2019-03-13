@@ -13,7 +13,7 @@ client.on("message", (message) => {
         if (!message.guild.roles.exists("name", "Helpers Team")) return message.channel.send(`لازم تسوي رتبة اسمها \`Helpers Team\` وتنطي البوت ادمنيتر حتا يقدر يسوي الرومات ويعدل برمشنات`);
         if (message.guild.channels.exists("name", "ticket-{message.author.id}" + message.author.id)) return message.channel.send(`You already have a ticket open.`);    /// ALPHA CODES
         message.guild.createChannel(`ticket-${message.author.username}`, "text").then(c => {
-            let role = message.guild.roles.find("name", "Helpers Team");
+            let role = message.guild.roles.find("name", "support Team");
             let role2 = message.guild.roles.find("name", "@everyone");
             c.overwritePermissions(role, {
                 SEND_MESSAGES: true,
@@ -28,7 +28,7 @@ client.on("message", (message) => {
                 READ_MESSAGES: true
             });
             message.channel.send(`:white_check_mark: تم انشاء تذكرتك, #${c.name}.`);
-            const embed = new Discord.RichEmbed()
+            const embed = new Discord.RichEmbed(embed) //..................
                 .setColor(0xCF40FA)
                 .addField(`Hey ${message.author.username}!`, `:white_check_mark:  تم انشاء تذكرتك, `)
                 .setTimestamp();
